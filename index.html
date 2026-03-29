@@ -6,7 +6,6 @@
   <title>🎉 KMDŽ proslava revolucije!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -178,7 +177,14 @@
   </div>
 
   <div class="map-wrapper reveal">
-    <div id="map"></div>
+    <iframe
+      class="map-frame"
+      title="Google mapa lokacije proslave"
+      src="https://www.google.com/maps?q=Kru%C5%BEna%202a%2C%20Vo%C5%BEdovac%2C%20Beograd&z=16&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
   </div>
 
   <!-- Slike ulaza -->
@@ -222,7 +228,6 @@
 </footer>
 
 <!-- ─── SCRIPTS ─── -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js" defer></script>
 </body>
 </html>

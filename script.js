@@ -114,37 +114,3 @@
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
-
-  /* ─── LEAFLET MAP ─── */
-  // Kružna 2a, Voždovac, Beograd
-  const LAT = 44.74647222222223;
-  const LNG = 20.50166666666667;
-
-  const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([LAT, LNG], 15);
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© OpenStreetMap contributors © CARTO',
-    maxZoom: 19
-  }).addTo(map);
-
-  const markerIcon = L.divIcon({
-    html: `<div style="
-      width:40px;height:40px;
-      background:linear-gradient(135deg,#f5c842,#ff9e2c);
-      border-radius:50% 50% 50% 0;
-      transform:rotate(-45deg);
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 0 16px rgba(245,200,66,0.7);
-      border:2px solid rgba(255,255,255,0.3);
-    ">
-      <span style="transform:rotate(45deg);font-size:18px;">🎉</span>
-    </div>`,
-    className: '',
-    iconSize: [40, 40],
-    iconAnchor: [20, 40]
-  });
-
-  L.marker([LAT, LNG], { icon: markerIcon })
-    .addTo(map)
-    .bindPopup('<b style="font-family:Syne,sans-serif">🎂 Ovde je žurka!</b><br><small>Klikni za navigaciju</small>')
-    .openPopup();
