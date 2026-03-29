@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 KMDŽ proslava revolucije!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="floaters" id="floaters"></div>
+
+  <div class="hero-badges">
+    <div class="hero-badge">Skandalozno</div>
+  </div>
+ 
+  <p class="hero-label">
+    Kornjači ku*vaćetini KIPTE SISE dok se koti k'o drogirana nasred parka, jesmo li ovo kao nacija zaslužili, Device Marijo! (VIDEO)
+  </p>
+
+  <h1 class="hero-question">
+    <span class="line1">Da li je to ko je to?</span>
+    <br>
+    <span class="line2">Izabrani bajiću</span>
+    <br>
+    <span class="line3">KMDŽ zove</span>
+  </h1>
+  <br>
+  <div class="hero-badges">
+    <div class="hero-badge">Haos</div>
+    <div class="hero-badge">Lom</div>
+    <div class="hero-badge">Tekila</div>
+    <div class="hero-badge">Pucanja</div>
+  </div>
+
+  <!-- <p class="hero-sub">Skrolni si dole pucke...</p> -->
+  
+  <div class="scroll-hint">
+    <span>Skrolni</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ══ POZIVNICA ══ -->
+<section class="section" id="invite">
+  <p class="section-tag">Sumoning 🐸 džicu</p>
+  <div class="invite-card reveal">
+    <h2 class="invite-title">
+      Pozvan/a si na<br>
+      <span class="highlight">dvostruki birthday bash!</span> 🎂
+    </h2>
+    <p class="invite-body">
+      Dragi bajiću,<br><br>
+      Imamo <strong>dupli razlog za slavlje</strong> — <strong>Irina i Milinko</strong> slave i nema šanse da to prolazi bez tebe! 
+      Dve torte, duplo piće, duplo dobar provod — i ti si <strong>obavezan/na da si tu.</strong>
+      <br><br>
+      Ovo nije obična žurka. Ovo je <strong>noć za pamćenje.</strong>
+    </p>
+    <div class="rsvp-note">
+      <span>📲</span>
+      <span>Javi nam se da znamo da te čekamo — što pre, to bolje!</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ HOSTS / SLIKE ══ -->
+<section id="hosts">
+  <h2 class="hosts-intro reveal">Upoznaj domaćine večeri ✨</h2>
+
+  <div class="hosts-grid" style="position:relative;">
+    <div class="host-card reveal">
+      <div class="photo-placeholder">
+        <span class="ph-icon">📸</span>
+        <span class="ph-label">Tvoja slika</span>
+        <span class="ph-sub">zameni src=""</span>
+      </div>
+      <!-- Kada imaš sliku: <img class="host-photo" src="slika1.jpg" alt="Slavljenik 1"> -->
+      <div class="host-overlay">
+        <span class="host-name">Milinko 🎂</span>
+        <span class="host-age">Slavljenik</span>
+      </div>
+    </div>
+
+    <div class="host-card reveal">
+      <div class="photo-placeholder">
+        <span class="ph-icon">📸</span>
+        <span class="ph-label">Slika devojke</span>
+        <span class="ph-sub">zameni src=""</span>
+      </div>
+      <!-- Kada imaš sliku: <img class="host-photo" src="slika2.jpg" alt="Slavljenik 2"> -->
+      <div class="host-overlay">
+        <span class="host-name">Irina 🎂</span>
+        <span class="host-age">Slavljenica</span>
+      </div>
+    </div>
+
+    <div class="and-badge">&amp;</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ DATUM I VREME ══ -->
+<section id="datetime">
+  <p class="section-tag">Kada?</p>
+  <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.5rem,6vw,2.2rem); font-weight:800; margin-bottom:1.5rem;" class="reveal">
+    Sačuvaj datum 📅
+  </h2>
+
+  <div class="datetime-display">
+    <div class="dt-block reveal">
+      <div class="dt-icon">📅</div>
+      <div class="dt-label">Datum</div>
+      <div class="dt-value">4. April</div>
+      <div class="dt-sub">2026</div>
+    </div>
+    <div class="dt-block reveal">
+      <div class="dt-icon">🕗</div>
+      <div class="dt-label">Vreme</div>
+      <div class="dt-value">21:00</div>
+      <div class="dt-sub">Dolazak od 19:30</div>
+    </div>
+    <div class="dt-block reveal" style="grid-column: 1 / -1;">
+      <div class="dt-icon">🌙</div>
+      <div class="dt-label">Trajanje</div>
+      <div class="dt-value">Dok gospodar ne zaspi!</div>
+      <div class="dt-sub">Nema ranog odlaska 😄</div>
+    </div>
+  </div>
+
+  <div class="countdown-wrapper reveal">
+    <p class="countdown-label">Odbrojavamo zajedno</p>
+    <div class="countdown">
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-days">--</div>
+        <div class="cd-lbl">Dana</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-hours">--</div>
+        <div class="cd-lbl">Sati</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-mins">--</div>
+        <div class="cd-lbl">Min</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-secs">--</div>
+        <div class="cd-lbl">Sek</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ LOKACIJA I MAPA ══ -->
+<section id="location">
+  <p class="section-tag">Gde?</p>
+  <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.5rem,6vw,2.2rem); font-weight:800; margin-bottom:1.5rem;" class="reveal">
+    Adresa & Mapa 📍
+  </h2>
+
+  <div class="location-info reveal">
+    <div class="location-name">📍 Kružna 2a, Voždovac</div>
+    <div class="location-addr">Kružna 2a, Beograd — Voždovac (Kumodraž)</div>
+    <a class="nav-btn" href="https://maps.app.goo.gl/DbR4FurSuCyetekr9" target="_blank">
+      🗺️ Navigacija
+    </a>
+  </div>
+
+  <div class="map-wrapper reveal">
+    <div id="map"></div>
+  </div>
+
+  <!-- Slike ulaza -->
+  <div class="entrance-section">
+    <p class="entrance-label">📷 Kako izgleda ulaz</p>
+    <div class="entrance-grid">
+      <div class="entrance-img reveal">
+        <div class="entrance-ph">
+          <span class="ph-icon">🏢</span>
+          <span class="ph-label">Slika ulaza 1</span>
+        </div>
+        <!-- <img src="ulaz1.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+      <div class="entrance-img reveal">
+        <div class="entrance-ph">
+          <span class="ph-icon">🚪</span>
+          <span class="ph-label">Slika ulaza 2</span>
+        </div>
+      </div>
+      <div class="entrance-img reveal">
+        <div class="entrance-ph">
+          <span class="ph-icon">🪧</span>
+          <span class="ph-label">Tabla / znak</span>
+        </div>
+      </div>
+      <div class="entrance-img reveal">
+        <div class="entrance-ph">
+          <span class="ph-icon">🅿️</span>
+          <span class="ph-label">Parking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span class="footer-emoji">🎉</span>
+  <p class="footer-big">Vidimo se tamo!</p>
+  <p class="footer-small">Donesi dobro raspoloženje — sve ostalo obezbeđujemo mi 🥂</p>
+</footer>
+
+<!-- ─── SCRIPTS ─── -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
