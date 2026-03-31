@@ -91,7 +91,7 @@
   document.querySelectorAll('.hosts-intro').forEach(el => observer.observe(el));
 
   /* ─── COUNTDOWN ─── */
-  const eventDate = new Date('2026-04-04T21:00:00');
+  const eventDate = new Date('2026-04-04T20:00:00');
 
   function updateCountdown(){
     const now = new Date();
